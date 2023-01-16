@@ -1,0 +1,39 @@
+.wrapper {
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    min-width: 300px;
+}
+
+.wrapper:hover {
+    border-color: black;
+}
+
+.title {
+    margin: 0;
+    font-size: clamp(20px, 2vw, 30px);
+}
+
+.description {
+    justify-content: baseline;
+}
+
+.description > *:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.selected {
+    border-width: 4px;
+    border-color: blueviolet;
+}
+
+.disabled {
+    opacity: 0.5;
+}
