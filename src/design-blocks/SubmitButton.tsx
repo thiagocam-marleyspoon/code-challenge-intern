@@ -1,4 +1,4 @@
-import styles from "./SubmitButton.module.css";
+import styles from './SubmitButton.module.css';
 
 export const SubmitButton = ({ children }: { children: React.ReactNode }) => {
     return (

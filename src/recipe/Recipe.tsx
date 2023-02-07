@@ -1,6 +1,6 @@
-import Image from "next/image";
-import { UseFormRegister } from "react-hook-form";
-import styles from "./Recipe.module.css";
+import Image from 'next/image';
+import { UseFormRegister } from 'react-hook-form';
+import styles from './Recipe.module.css';
 
 export function Recipe({
     id,
@@ -40,7 +40,7 @@ export function Recipe({
                 <Image
                     width={500}
                     height={333}
-                    style={{ width: "100%", objectFit: "contain" }}
+                    style={{ width: '100%', objectFit: 'contain' }}
                     alt="recipe"
                     src={src}
                 />
