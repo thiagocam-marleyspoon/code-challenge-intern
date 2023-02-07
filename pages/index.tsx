@@ -7,7 +7,7 @@ import { Recipe } from '../src/recipe/Recipe';
 import { useRecipeStore } from '../src/recipe/recipeStore';
 
 type FormError = {
-    message: 'Must select at least 2 recipes';
+    message: 'Must select at least 3 recipes';
     code: 100;
 };
 
@@ -32,8 +32,8 @@ export default function Home() {
     }, [data?.recipes.map(r => watch(r.id)).join()]);
 
     const onSubmit = (formData: Record<string, boolean>) => {
-        if (Object.values(formData).filter(v => v).length < 2) {
-            setError({ code: 100, message: 'Must select at least 2 recipes' });
+        if (Object.values(formData).filter(v => v).length < 3) {
+            setError({ code: 100, message: 'Must select at least 3 recipes' });
             return;
         }
         recipeStore.setRecipes(data!.recipes.filter(r => formData[r.id]));
@@ -45,7 +45,7 @@ export default function Home() {
     }
 
     const maxRecipesSelected =
-        data.recipes.map(r => (watch(r.id) ? 1 : (0 as number))).reduce((prev, next) => prev + next, 0) >= 2;
+        data.recipes.map(r => (watch(r.id) ? 1 : (0 as number))).reduce((prev, next) => prev + next, 0) >= 3;
 
     return (
         <div>
@@ -70,6 +70,10 @@ export default function Home() {
                                 title={recipe.title}
                                 subtitle={recipe.subtitle}
                                 src={recipe.image.url}
+                                recipeType={recipe.recipeType}
+                                mealType={recipe.mealType}
+                                category={recipe.category.displayText}
+                                attributes={recipe.attributes}
                             />
                         );
                     })}
