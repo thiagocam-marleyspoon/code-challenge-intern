@@ -37,3 +37,25 @@
 .disabled {
     opacity: 0.5;
 }
+
+.isPremium {
+    background-color: blanchedalmond;
+}
+
+.categoryStandard,
+.categoryPremium {
+    border: solid 1px #667;
+    border-radius: 5px;
+    padding: 5px;
+    display: inline-block;
+    margin-right: 10px;
+    text-transform: uppercase;
+    font-size: x-small;
+}
+
+.categoryStandard {
+    background-color: rgb(211, 211, 211);
+}
+.categoryPremium {
+    background-color: rgb(253, 249, 2);
+}
